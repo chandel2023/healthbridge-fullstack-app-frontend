@@ -21,6 +21,8 @@ const Login = () => {
       const { token, user } = res.data;
       localStorage.setItem("token", token);
       localStorage.setItem("role", user.role);
+      localStorage.setItem("user", JSON.stringify(user));
+
 
       if (user.role === "doctor" || user.role === "patient") {
         navigate("/welcome"); // ✅ Both go to welcome
