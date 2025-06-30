@@ -8,7 +8,7 @@ const LearnerDashboard = () => {
     const fetchLearnerClasses = async () => {
       try {
         const token = localStorage.getItem('token');
-        const res = await axios.get('http://healthbridge-backend-mmfn.onrender.com/api/yoga/learner-classes', {
+        const res = await axios.get('https://healthbridge-backend-mmfn.onrender.com/api/yoga/learner-classes', {
           headers: {
             Authorization: `Bearer ${token}`
           }

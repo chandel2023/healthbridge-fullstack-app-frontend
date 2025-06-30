@@ -29,7 +29,7 @@ const BookYogaClass = () => {
   useEffect(() => {
     const fetchInstructors = async () => {
       try {
-        const res = await axios.get('http://healthbridge-backend-mmfn.onrender.com/api/instructors');
+        const res = await axios.get('https://healthbridge-backend-mmfn.onrender.com/api/instructors');
         setInstructors(res.data);
       } catch (err) {
         console.error('Error fetching instructors:', err.message);
@@ -46,7 +46,7 @@ const BookYogaClass = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.post('http://healthbridge-backend-mmfn.onrender.com/api/yoga/book', formData, {
+      const res = await axios.post('https://healthbridge-backend-mmfn.onrender.com/api/yoga/book', formData, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setMessage(res.data.message);

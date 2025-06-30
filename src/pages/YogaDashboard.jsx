@@ -7,7 +7,7 @@ const YogaDashboard = () => {
   const fetchClasses = async () => {
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.get('http://healthbridge-backend-mmfn.onrender.com/api/yoga/classes', {
+      const res = await axios.get('https://healthbridge-backend-mmfn.onrender.com/api/yoga/classes', {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -25,7 +25,7 @@ const YogaDashboard = () => {
   const handleStatusChange = async (id, status) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.patch(`http://healthbridge-backend-mmfn.onrender.com/api/yoga/classes/${id}/status`, { status }, {
+      await axios.patch(`https://healthbridge-backend-mmfn.onrender.com/api/yoga/classes/${id}/status`, { status }, {
         headers: { Authorization: `Bearer ${token}` }
       });
       fetchClasses();
@@ -37,7 +37,7 @@ const YogaDashboard = () => {
   const handleDelete = async (id) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`http://healthbridge-backend-mmfn.onrender.com/api/yoga/classes/${id}`, {
+      await axios.delete(`https://healthbridge-backend-mmfn.onrender.com/api/yoga/classes/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       fetchClasses();

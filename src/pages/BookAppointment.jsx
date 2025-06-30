@@ -37,7 +37,7 @@ const BookAppointment = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.post('http://healthbridge-backend-mmfn.onrender.com/api/appointments', formData, {
+      const res = await axios.post('https://healthbridge-backend-mmfn.onrender.com/api/appointments', formData, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setMessage(res.data.message);
@@ -49,7 +49,7 @@ const BookAppointment = () => {
   useEffect(() => {
     const fetchDoctors = async () => {
       try {
-        const res = await axios.get('http://healthbridge-backend-mmfn.onrender.com/api/doctors');
+        const res = await axios.get('https://healthbridge-backend-mmfn.onrender.com/api/doctors');
         setDoctors(res.data);
       } catch (err) {
         console.error('Error fetching doctors:', err.message);

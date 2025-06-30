@@ -7,7 +7,7 @@ const DoctorDashboard = () => {
   const fetchAppointments = async () => {
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.get('http://healthbridge-backend-mmfn.onrender.com/api/appointments', {
+      const res = await axios.get('https://healthbridge-backend-mmfn.onrender.com/api/appointments', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setAppointments(res.data);
@@ -19,7 +19,7 @@ const DoctorDashboard = () => {
   const updateStatus = async (id, status) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.patch(`http://healthbridge-backend-mmfn.onrender.com/api/appointments/${id}/status`, { status }, {
+      await axios.patch(`https://healthbridge-backend-mmfn.onrender.com/api/appointments/${id}/status`, { status }, {
         headers: { Authorization: `Bearer ${token}` },
       });
       fetchAppointments(); // refresh after update
@@ -31,7 +31,7 @@ const DoctorDashboard = () => {
   const deleteAppointment = async (id) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`http://healthbridge-backend-mmfn.onrender.com/api/appointments/${id}`, {
+      await axios.delete(`https://healthbridge-backend-mmfn.onrender.com/api/appointments/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       fetchAppointments(); // refresh after delete
